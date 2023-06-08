@@ -1,27 +1,32 @@
-# Color-Picker
+# Color Picker GUI
 
-Dieses Programm ist ein einfaches GUI-Tool zum Auswählen und Kopieren von Farbcodes.
+Color Picker GUI is a Python application that allows users to choose a color and copy its hexadecimal value. The application is built using the PyQt5 library.
 
-Installation:
+## Usage
 
-Dieses Programm benötigt Python 3 und die folgenden Bibliotheken: tkinter, tkinter.colorchooser.
-Die Bibliotheken können mit pip installiert werden:
-pip install tkinter
-pip install tkcolorpicker
+1. Make sure you have Python installed on your system.
+2. Install the PyQt5 library by running the following command:
 
-Verwendung:
+``pip install PyQt5``
 
-Führen Sie das Programm aus, indem Sie "python color_picker.py" in der Kommandozeile eingeben.
-Klicken Sie auf das Farbfeld, um das Farbauswahlfenster zu öffnen.
-Wählen Sie eine Farbe aus dem Farbauswahlfenster aus. Die ausgewählte Farbe wird im Farbfeld angezeigt und der Hex-Code wird unter dem Feld angezeigt.
-Klicken Sie auf die Schaltfläche "Kopieren", um den Hex-Code in die Zwischenablage zu kopieren.
+3. Create a Python file, for example, `ColorPickerGUI.py`, and copy the provided code into the file.
+4. Run the Python file using the following command:
 
-Code-Erklärung:
+``python ColorPickerGUI.py``
 
-Die Klasse ColorPickerGUI ist der Hauptteil des Programms. Es erstellt ein Fenster mit einem Farbfeld, einem Label zur Anzeige des Hex-Codes der ausgewählten Farbe und einer Schaltfläche zum Kopieren des Hex-Codes.
-Die Methode choose_color wird aufgerufen, wenn das Farbfeld geklickt wird. Es öffnet ein Farbauswahlfenster und aktualisiert das Farbfeld und das Label mit der ausgewählten Farbe und dem Hex-Code.
-Die Methode copy_hex wird aufgerufen, wenn die Schaltfläche "Kopieren" geklickt wird. Es kopiert den Hex-Code in die Zwischenablage des Betriebssystems.
+5. The Color Picker GUI window will open.
+6. Click on the color field to open a color picker dialog.
+7. Choose a color from the dialog, and the selected color will be displayed in the color field.
+8. The hexadecimal value of the selected color will be displayed below the color field.
+9. Click the "Kopieren" (Copy) button to copy the hexadecimal value to the clipboard.
+10. If any changes are made to the color, a prompt will appear when attempting to close the window, asking if you want to save the changes.
 
-!!Hinweis:
+## Dependencies
 
-Das Programm verwendet das Modul tkinter.colorchooser zur Erstellung des Farbauswahlfensters.
+The following dependencies are required to run the Color Picker GUI:
+
+- PyQt5
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
