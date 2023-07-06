@@ -34,11 +34,22 @@ class ColorPickerGUI(QMainWindow):
         self.hex_label.setAlignment(Qt.AlignCenter)  # Set the alignment for the label
         layout.addWidget(self.hex_label)  # Add the label to the layout
 
-        # Create a button to copy the selected color to the clipboard
-        self.copy_button = QPushButton(central_widget)
-        self.copy_button.setText("Kopieren")  # Set the text for the button
-        self.copy_button.clicked.connect(self.copy_hex)  # Connect the button to the copy_hex method
-        layout.addWidget(self.copy_button)  # Add the button to the layout
+        # Create a label to display the selected color in RGB format
+        self.rgb_label = QLabel(central_widget)
+        self.rgb_label.setAlignment(Qt.AlignCenter)  # Set the alignment for the label
+        layout.addWidget(self.rgb_label)  # Add the label to the layout
+
+        # Create a button to copy the selected color's hexadecimal code to the clipboard
+        self.copy_hex_button = QPushButton(central_widget)
+        self.copy_hex_button.setText("Kopieren (Hex)")  # Set the text for the button
+        self.copy_hex_button.clicked.connect(self.copy_hex)  # Connect the button to the copy_hex method
+        layout.addWidget(self.copy_hex_button)  # Add the button to the layout
+
+        # Create a button to copy the selected color's RGB code to the clipboard
+        self.copy_rgb_button = QPushButton(central_widget)
+        self.copy_rgb_button.setText("Kopieren (RGB)")  # Set the text for the button
+        self.copy_rgb_button.clicked.connect(self.copy_rgb)  # Connect the button to the copy_rgb method
+        layout.addWidget(self.copy_rgb_button)  # Add the button to the layout
 
         # Add a variable to track whether the color has been changed or not
         self.color_changed = False
@@ -49,14 +60,19 @@ class ColorPickerGUI(QMainWindow):
         if color.isValid():
             self.color_button.setStyleSheet("background-color: " + color.name())  # Set the background color of the button to the chosen color
             self.hex_label.setText(color.name())  # Display the chosen color in hexadecimal format
+            self.rgb_label.setText(f"RGB: {color.red()}, {color.green()}, {color.blue()}") 
             self.color_changed = True  # Set the variable to True when the color is changed
 
-    # Define a method to copy the selected color to the clipboard
+    # Define a method to copy the hexadecimal code to the clipboard
     def copy_hex(self):
-        hex_code = self.hex_label.text()  # Get the hexadecimal value of the selected color
-        if hex_code:
-            QApplication.clipboard().setText(hex_code)  # Copy the hexadecimal value to the clipboard
-            self.color_changed = False  # Set the variable to False when the color is copied
+        color = self.color_button.palette().button().color().name()  # Get the color from the button's palette
+        QApplication.clipboard().setText(color)  # Copy the color to the clipboard
+
+    # Define a method to copy the RGB code to the clipboard
+    def copy_rgb(self):
+        color = self.color_button.palette().button().color()  # Get the color from the button's palette
+        rgb_code = f"RGB: {color.red()}, {color.green()}, {color.blue()}"  # Create the RGB code
+        QApplication.clipboard().setText(rgb_code)  # Copy the RGB code to the clipboard
 
     # Override the closeEvent method to prompt the user before closing the window
     def closeEvent(self, event):
