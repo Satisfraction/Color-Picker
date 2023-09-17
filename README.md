@@ -1,31 +1,54 @@
-# Color Picker GUI
+# Color Picker
 
-Color Picker GUI is a Python application that allows users to choose a color and copy its hexadecimal value. The application is built using the PyQt5 library.
+Color Picker is a Python application that allows users to choose a color and copy its hexadecimal and RGB values. The application is built using the PyQt5 library.
+
+## Table of Contents
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [License](#license)
 
 ## Usage
 
-1. Make sure you have Python installed on your system.
-2. Install the PyQt5 library by running the following command:
+Follow these steps to use the Color Picker application:
 
-``pip install PyQt5``
+1. **Prerequisites**: Make sure you have Python installed on your system.
 
-3. Create a Python file, for example, `ColorPickerGUI.py`, and copy the provided code into the file.
-4. Run the Python file using the following command:
+2. **Install PyQt5**: If you haven't already, install the PyQt5 library by running the following command:
 
-``python ColorPickerGUI.py``
+    ```shell
+    pip install PyQt5
+    ```
 
-5. The Color Picker GUI window will open.
-6. Click on the color field to open a color picker dialog.
-7. Choose a color from the dialog, and the selected color will be displayed in the color field.
-8. The hexadecimal value of the selected color will be displayed below the color field.
-9. Click the "Kopieren" (Copy) button to copy the hexadecimal value to the clipboard.
-10. If any changes are made to the color, a prompt will appear when attempting to close the window, asking if you want to save the changes.
+
+3. **Run the Application**:
+- Create a Python file, for example, `ColorPicker.py`.
+- Copy the provided Python code into the `ColorPicker.py` file.
+
+4. **Execute the Application**: Open your terminal or command prompt, navigate to the directory containing `ColorPicker.py`, and run the following command:
+
+    ```python
+    python ColorPicker.py
+    ```
+
+
+5. **Use the Color Picker**:
+- The Color Picker window will open.
+- Click on the color field to open a color picker dialog.
+- Choose a color from the dialog, and the selected color will be displayed in the color field.
+- The hexadecimal value of the selected color will be displayed below the color field.
+- The RGB value of the selected color will also be displayed below the color field.
+- Click the "Kopieren (Hex)" (Copy Hex) button to copy the hexadecimal value to the clipboard.
+- Click the "Kopieren (RGB)" (Copy RGB) button to copy the RGB value to the clipboard.
+
+6. **Save Changes Prompt**: If you make any changes to the color and attempt to close the window, a prompt will appear, asking if you want to save the changes.
 
 ## Dependencies
 
-The following dependencies are required to run the Color Picker GUI:
+The following dependency is required to run the Color Picker:
 
 - PyQt5
+
+Make sure to install PyQt5 using the provided instructions in the Usage section.
 
 ## License
 
